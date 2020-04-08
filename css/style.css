@@ -328,9 +328,6 @@ span.text{
 }
 
 
-.show{
-  display: block;
-}
-.hide{
+i.send{
   display: none;
 }
