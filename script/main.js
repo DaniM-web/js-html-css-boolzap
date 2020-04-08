@@ -60,7 +60,7 @@ var contacts = $('.contact-item')
 //eventi sull input di ricerca
 // filtro contatti
   //gestirte evento su tastiera (oppure su click di bottone di input ricerca)
-  inputSearch.keydown(
+  inputSearch.keyup(
     function (event) {
       // salvarmi input utente in campo del filtro (stringa1)
       var textInsert = inputSearch.val().toLowerCase();
