@@ -6,6 +6,7 @@ var invio = $('span.icon-change');
 var input = $('.input-container input');
 var div = $('.chat-container');
 var attivo = false;
+var arrow = $('.arrow-msg');
 
 
 // eventi sull'input della chat
@@ -24,7 +25,8 @@ input.on({
     microfone.show();
     plane.hide();
   },
-  'keypress':
+  // al press invio il msg viene inviato
+  'keyup':
   function (e) {
     if(e.which == 13) {
       inviaRispondi();
@@ -32,25 +34,21 @@ input.on({
   }
 });
 
-// input.keydown(function(event){
-
 // al click dell'icona paperPlane ivio il messaggio
 invio.on({
   'click':
     inviaRispondi
-  // 'keydown':
-  //   press
 });
 
 function inviaRispondi() {
     console.log(input.val());
     //appendo il div con relativa classe
-    div.append('<div class = "my-msg message"> <span>'+ input.val() +'</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span></div>');
+    div.append('<div class = "my-msg message"> <span>'+ input.val() +'</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
     input.val("");
   // imposto la funzione che risponde al mio msg dopo 1 secondo
     setTimeout(
       function(){
-        div.append('<div class = "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span></div>');
+        div.append('<div class = "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
       }, 1000);
 }
 
@@ -64,6 +62,7 @@ var contacts = $('.contact-item')
     function (event) {
       // salvarmi input utente in campo del filtro (stringa1)
       var textInsert = inputSearch.val().toLowerCase();
+
       console.log("Testo inserito: " + textInsert);
       // selezionare tutti i blocchi di contatto e ciclare tra di essi (each())
       contacts.each(
@@ -84,14 +83,27 @@ var contacts = $('.contact-item')
     }
   );
 
+//cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
+
+//Click sul contatto mostra la conversazione del contatto cliccato
+  $(".chat-container").on("click", ".arrow-msg",
+    function () {
+      $(this).siblings(".option-box").toggle();
+  });
+  // cliccando sull'opz cancella messaggio, il messaggio selezioanto viene eliminato
+  $(".chat-container").on("click", ".delete",
+    function () {
+      console.log(this);
+      $(this).parents(".message").remove();
+  });
 
 
 
 
-
-
-
-
+// click sul contatto che ha data-attr che corrisponde a stesso data-attr in chat
+// salvo il valore dell’attr e lo usso per dire quale chat è attiva
+// è possibile inserire nuovi messaggi per ogni conversazione [attiva]
 
 
 

@@ -181,6 +181,7 @@ span.text{
 
 
 
+
 /* lato destro dell'app */
 .right-side{
   width: 65%;
@@ -249,7 +250,7 @@ span.text{
   align-items: center
 }
 
-.chat-container{
+.chat-container.active{
   width: 90%;
   height: 90%;
   margin: 0 auto;
@@ -297,7 +298,28 @@ span.text{
   color: rgb(177, 177, 177);
 }
 
+.option-box{
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  max-width: 200px;
+  line-height: 30px;
+  background-color: white;
+  display: none;
+  box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.75);
+  text-align: center;
+}
+.option-box span{
+  display: block;
+  cursor: pointer;
+}
+.option-box span:hover{
+  color: #B6B9BB;
+}
 
+.message{
+  position: relative;
+}
 
 /* input messaggio nav */
 .footer-right{
