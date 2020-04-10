@@ -18,7 +18,6 @@ body{
     flex-direction: column;
     justify-content: center;
     font-family: 'Lato', sans-serif;
-
 }
 
 /* contenitore dell'app */
@@ -249,13 +248,17 @@ span.text{
   display: flex;
   align-items: center
 }
-
-.chat-container.active{
+/* CONTENITORE CHAT SINGOLO */
+.chat-container{
   width: 90%;
   height: 90%;
   margin: 0 auto;
+  display: none;
 }
-
+.chat-container.active{
+  display: block;
+}
+/* MESSAGGIO INVIATO PROPERTIES */
 .my-msg {
   position: relative;
   margin: 5px 0;
@@ -268,6 +271,7 @@ span.text{
   clear: both;
   word-wrap: break-word;
 }
+/* MESSAGGIO RICEVUTO PROPERTIES */
 .your-msg{
   position: relative;
   margin: 5px 0;
@@ -348,8 +352,7 @@ span.text{
   color: grey;
   cursor: pointer;
 }
-
-
+/* PAPERPLANE A COMPARSA */
 i.send{
   display: none;
 }

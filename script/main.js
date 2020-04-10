@@ -86,7 +86,7 @@ var contacts = $('.contact-item')
 //cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 
 
-//Click sul contatto mostra la conversazione del contatto cliccato
+
   $(".chat-container").on("click", ".arrow-msg",
     function () {
       $(this).siblings(".option-box").toggle();
@@ -101,6 +101,7 @@ var contacts = $('.contact-item')
 
 
 
+//Click sul contatto mostra la conversazione del contatto cliccato
 // click sul contatto che ha data-attr che corrisponde a stesso data-attr in chat
 // salvo il valore dell’attr e lo usso per dire quale chat è attiva
 // è possibile inserire nuovi messaggi per ogni conversazione [attiva]
