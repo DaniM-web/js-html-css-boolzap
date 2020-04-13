@@ -95,15 +95,22 @@ function inviaRispondi() {
     boxChat.append('<div class= "my-msg message"> <span>'+ input.val() +'</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">'+ hour + minutes +'</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
     input.val("");
   // imposto la funzione che risponde al mio msg dopo 1 secondo
-    setTimeout(
-      function(){
-        var boxChat = $(".chat-container.active");
-        // var writing = $('.header-right-sx.active .header-right-sx-info p');
-        // writing.html('Sta scrivendo...');
-        console.log(this);
-        console.log("io ritardo");
-        boxChat.append('<div class= "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">'+ hour + minutes +'</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
-      }, 1000);
+    // prima spunta la scritta sta scrivendo sotto il nome
+      setTimeout(
+        function(){
+            var writing = $('.header-right-sx.active .header-right-sx-info p');
+            writing.html('Sta scrivendo...');
+            }, 2000);
+            //poi la risposta automatica
+          setTimeout(
+            function(){
+              var boxChat = $(".chat-container.active");
+              var writing = $('.header-right-sx.active .header-right-sx-info p');
+              console.log(this);
+              console.log("io ritardo");
+              boxChat.append('<div class= "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">'+ hour + minutes +'</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
+              writing.html("Ultimo accesso alle "+ hour + minutes);
+            }, 5000);
 };
 
 
