@@ -1,0 +1,366 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
+
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+}
+
+/* contenitore dell'app */
+.container-app{
+  width: 80%;
+  min-width: 800px;
+  margin: auto;
+  height: 95%;
+  display: flex;
+  background-color: #d2dbdc;
+
+
+}
+
+/* lato sinitro dell'app */
+.left-side{
+  width: 35%;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #D6D6D6;
+
+}
+
+.header-left{
+  width: 100%;
+
+  height: 80px;
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-left-logo{
+  width: 50%;
+  margin-left: 10px;
+}
+.header-left-logo img{
+  width: 60px;
+  height: auto;
+  border-radius: 100%;
+}
+.header-left-icons{
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+.header-left-icons i{
+  font-size: 25px;
+  color: rgb(177, 177, 177);
+  cursor: pointer;
+}
+
+.notific-bar{
+width: 100%;
+height: 90px;
+background-color: #8EDAFC;
+display: flex;
+align-items: center;
+padding-left: 10px;
+}
+.notific-bar span i{
+  color: #8EDAFC;
+  font-size: 25px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+.notific-bar span {
+  margin-right: 20px;
+}
+.notific-bar span:last-child a{
+  font-size: 14px;
+  color: #4F7485;
+}
+
+
+.search-bar{
+  width: 100%;
+  height: 50px;
+  background-color: #EAEAEA;
+  display: flex;
+  align-items: center;
+}
+.search-container{
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 70%;
+  background-color: #fff;
+  border: 1px solid #D6D6D6;
+  margin: auto;
+  padding-left: 30px;
+}
+.search-container span{
+  width: 10%;
+  color: rgb(177, 177, 177);
+}
+.search-container input{
+  width: 90%;
+  height: 100%;
+  border: none;
+}
+
+
+
+
+.contacts-bar{
+width: 100%;
+height: calc(100% - 50px - 90px - 80px);
+
+overflow-y: scroll;
+overflow-x: hidden;
+}
+.contact-item{
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F5F5F5;
+  cursor: pointer;
+}
+.contact-item-logo{
+  width: 60px;
+  margin: auto 20px;
+
+}
+.contact-item-logo img{
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+}
+.contact-item-text{
+  width: calc(100% - 100px);
+  line-height: 25px;
+}
+span.text{
+  display: flex;
+  justify-content: space-between;
+}
+.text h5{
+  font-size: 20px;
+  font-weight: normal;
+}
+.text p{
+  margin-right: 8px;
+}
+.contact-item-text p{
+  font-size: 13px;
+  color: rgb(177, 177, 177);
+}
+
+.contact-item:hover{
+  background-color: #f4f5f5;
+}
+
+.contact-item.active{
+  border-bottom-color: transparent;
+  background-color: #E9EBEB;
+}
+
+
+
+
+/* lato destro dell'app */
+.right-side{
+  width: 65%;
+  height: 100% ;
+}
+
+.header-right{
+  width: 100%;
+  height: 80px;
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right-sx{
+  display: none;
+}
+
+.header-right-sx.active{
+  display: flex;
+  align-items: center;
+}
+
+.header-right-sx-logo{
+  width: 60px;
+  margin: auto 20px;
+}
+.header-right-sx-logo img{
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+}
+
+.header-right-sx-info{
+  line-height: 25px;
+}
+.header-right-sx-info h5{
+  font-size: 20px;
+  font-weight: normal;
+}
+.header-right-sx-info p{
+  font-size: 13px;
+  color: rgb(177, 177, 177);
+}
+
+.header-right-dx{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.header-right-dx-icons i{
+  font-size: 25px;
+  color: rgb(177, 177, 177);
+  cursor: pointer;
+  margin: auto 15px;
+}
+
+
+
+/* contenitore chat */
+.main-right{
+  width: 100%;
+  height: calc(100% - 160px);
+  background-image: url('../img/sfondo.jpg');
+  overflow-y: scroll;
+  display: flex;
+  align-items: center
+}
+/* CONTENITORE CHAT SINGOLO */
+.chat-container{
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  display: none;
+}
+.chat-container.active{
+  display: block;
+}
+/* MESSAGGIO INVIATO PROPERTIES */
+.my-msg {
+  position: relative;
+  margin: 5px 0;
+  padding: 15px 15px 20px 15px;
+  min-width: 20%;
+  max-width: 60%;
+  background: #D5F9BA;
+  border-radius: 10px;
+  float: right;
+  clear: both;
+  word-wrap: break-word;
+}
+/* MESSAGGIO RICEVUTO PROPERTIES */
+.your-msg{
+  position: relative;
+  margin: 5px 0;
+  padding: 15px 15px 20px 15px;
+  min-width: 20%;
+  max-width: 60%;
+  background: #fff;
+  border-radius: 10px;
+  float: left;
+  clear: both;
+  word-wrap: break-word;
+}
+.deleted-msg{
+  background-color: #fff;
+  color: grey;
+}
+.message:hover .arrow-msg{
+  display: inline-block;
+}
+.arrow-msg{
+  float: right;
+  display: none;
+  color: #B6B9BB;
+  cursor: pointer;
+  clear: both;
+}
+.message-time{
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  color: rgb(177, 177, 177);
+}
+
+.option-box{
+  position: absolute;
+  z-index: 100;
+  padding: 15px;
+  width: 100%;
+  max-width: 200px;
+  line-height: 30px;
+  background-color: white;
+  display: none;
+  box-shadow: 0px 0px 40px -15px rgba(0,0,0,0.75);
+  text-align: center;
+}
+.option-box span{
+  display: block;
+  cursor: pointer;
+}
+.option-box span:hover{
+  color: #B6B9BB;
+}
+
+.message{
+  position: relative;
+}
+
+/* input messaggio nav */
+.footer-right{
+  width: 100%;
+  height: 80px;
+  background-color: #EAEAEA;
+}
+
+.input-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.input-container input{
+  width: 80%;
+  height: 80%;
+  border: none;
+  border-radius: 5px;
+  padding-left: 30px;
+}
+
+.input-container i{
+  font-size: 30px;
+  color: grey;
+  cursor: pointer;
+}
+/* PAPERPLANE A COMPARSA */
+i.send{
+  display: none;
+}
