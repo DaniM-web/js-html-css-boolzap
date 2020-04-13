@@ -4,9 +4,52 @@ var microfone = $('i.fas.fa-microphone');
 var plane = $('i.send');
 var invio = $('span.icon-change');
 var input = $('.input-container input');
-var div = $('.chat-container');
 var attivo = false;
 var arrow = $('.arrow-msg');
+var inputSearch = $('.search-container input');
+var contacts = $('.contact-item')
+
+
+//Click sul contatto mostra la conversazione del contatto cliccato
+// click sul contatto che ha data-attr che corrisponde a stesso data-attr in chat
+// salvo il valore dell’attr e lo usso per dire quale chat è attiva
+contacts.click(
+  function () {
+    var containerChat = $(".chat-container")
+    var dataContatto = $(this).data("chat");
+    var headerInfo = $('.header-right-sx')
+    console.log("il data del contatto è: " + dataContatto);
+
+    // rimuovo la classe active ai contatti e la do a quello cliccato
+    contacts.removeClass("active");
+    $(this).addClass("active");
+    //rimuovo la classe active dal container chat e dall'header con l'ultimo accesso
+    headerInfo.removeClass('active');
+    containerChat.removeClass('active');
+
+    //ciclo i containerChat per vedere i data attr. corrispondenti
+    containerChat.each(
+      function () {
+        var dataChat = $(this).data("chat");
+        //Se i data attr. del contatto e del containerChat corrispondono allora do al container la classe active
+        if (dataContatto == dataChat) {
+          $(this).addClass("active");
+        }
+      }
+    );
+    //ciclo gli headerInfo per vedere i data attr. corrispondenti
+    headerInfo.each(
+      function () {
+        var headerData = $(this).data("chat")
+        //Se i data attr. del contatto e dell'header corrispondono allora do all'header la classe active
+        if (dataContatto == headerData) {
+          $(this).addClass("active");
+        }
+      }
+    );
+//chiusura contacts.click
+  }
+);
 
 
 // eventi sull'input della chat
@@ -29,31 +72,35 @@ input.on({
   'keyup':
   function (e) {
     if(e.which == 13) {
-      inviaRispondi();
+      inviaRispondi()
+      console.log("io premuto invio");
     }
   }
 });
 
-// al click dell'icona paperPlane ivio il messaggio
-invio.on({
-  'click':
-    inviaRispondi
-});
-
+// al click dell'icona paperPlane invio il messaggio
+$(document).on( "click", "span.icon-change",
+  inviaRispondi,
+);
+//definisco la funzione inviaRispondi
 function inviaRispondi() {
     console.log(input.val());
-    //appendo il div con relativa classe
-    div.append('<div class = "my-msg message"> <span>'+ input.val() +'</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
+    //salvo nella variabile il container con classe active al momento del click
+    var boxChat = $(".chat-container.active");
+    console.log(this);
+    //appendo alla chat attiva il div con relativa classe
+    boxChat.append('<div class= "my-msg message"> <span>'+ input.val() +'</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
     input.val("");
   // imposto la funzione che risponde al mio msg dopo 1 secondo
     setTimeout(
       function(){
-        div.append('<div class = "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
+        var boxChat = $(".chat-container.active");
+        console.log(this);
+        console.log("io ritardo");
+        boxChat.append('<div class= "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">18.01</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
       }, 1000);
-}
+};
 
-var inputSearch = $('.search-container input');
-var contacts = $('.contact-item')
 
 //eventi sull input di ricerca
 // filtro contatti
@@ -85,8 +132,6 @@ var contacts = $('.contact-item')
 
 //cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 
-
-
   $(".chat-container").on("click", ".arrow-msg",
     function () {
       $(this).siblings(".option-box").toggle();
@@ -99,14 +144,5 @@ var contacts = $('.contact-item')
   });
 
 
-
-
-//Click sul contatto mostra la conversazione del contatto cliccato
-// click sul contatto che ha data-attr che corrisponde a stesso data-attr in chat
-// salvo il valore dell’attr e lo usso per dire quale chat è attiva
-// è possibile inserire nuovi messaggi per ogni conversazione [attiva]
-
-
-
-
+//chiusura document ready
 });
