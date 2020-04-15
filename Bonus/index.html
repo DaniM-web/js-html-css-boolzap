@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EX - Replica Whatsapp - Bonus</title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://kit.fontawesome.com/21315f3230.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -294,159 +295,172 @@
             </div>
           </div>
             <!-- SECONDA CHAT -->
-            <div class="chat-container" data-chat="2">
-              <!-- MESSAGGIO INVIATO (VERDE) -->
-              <div class="my-msg message">
-                <span>We mbare tutto bene?</span>
-                <i class="fa fa-chevron-down arrow-msg"></i>
-                <span class="message-time">18.01</span>
-                <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                  <span>Info messaggio</span>
-                  <span class="delete">Cancella messaggio</span>
-                </div>
-              </div>
-              <!-- MESSAGGIO RICEVUTO (BIANCO) -->
-              <div class="your-msg message">
-                <span>Si un po di casini ma va bene</span>
-                <i class="fa fa-chevron-down arrow-msg"></i>
-                <span class="message-time">18.01</span>
-                <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                  <span>Info messaggio</span>
-                  <span class="delete">Cancella messaggio</span>
-                </div>
+          <div class="chat-container" data-chat="2">
+            <!-- MESSAGGIO INVIATO (VERDE) -->
+          <div class="my-msg message">
+            <span>We mbare tutto bene?</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+          <!-- MESSAGGIO RICEVUTO (BIANCO) -->
+          <div class="your-msg message">
+            <span>Si un po di casini ma va bene</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+        </div>
+          <!-- TERZA CHAT -->
+        <div class="chat-container" data-chat="3">
+          <!-- MESSAGGIO INVIATO (VERDE) -->
+          <div class="my-msg message">
+            <span>Domani ci sei per la partita?</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+          <!-- MESSAGGIO RICEVUTO (BIANCO) -->
+          <div class="your-msg message">
+            <span>Certo, non posso mancare</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+        </div>
+        <!-- QUARTA CHAT -->
+        <div class="chat-container" data-chat="4">
+          <!-- MESSAGGIO INVIATO (VERDE) -->
+          <div class="my-msg message">
+            <span>Ho un lavoro per te</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+          <!-- MESSAGGIO RICEVUTO (BIANCO) -->
+          <div class="your-msg message">
+            <span>Di che si tratta?</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box">
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+        </div>
+        <!-- QUINTA CHAT -->
+        <div class="chat-container" data-chat="5">
+          <!-- MESSAGGIO INVIATO (VERDE) -->
+          <div class="my-msg message">
+            <span>Stasera birra al solito pub</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+          <!-- MESSAGGIO RICEVUTO (BIANCO) -->
+          <div class="your-msg message">
+            <span>Non posso, mi disp</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+        </div>
+        <!-- SESTA CHAT -->
+        <div class="chat-container" data-chat="6">
+          <!-- MESSAGGIO INVIATO (VERDE) -->
+          <div class="my-msg message">
+            <span>Mi puoi passare quel file che ti avevo chiesto?</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+          <!-- MESSAGGIO RICEVUTO (BIANCO) -->
+          <div class="your-msg message">
+            <span>Certo, te lo mando appena arrivo a casa</span>
+            <i class="fa fa-chevron-down arrow-msg"></i>
+            <span class="message-time">18.01</span>
+            <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+              <span>Info messaggio</span>
+              <span class="delete">Cancella messaggio</span>
+            </div>
+          </div>
+          </div>
+            <!-- SETTIMA CHAT -->
+          <div class="chat-container" data-chat="7">
+            <!-- MESSAGGIO INVIATO (VERDE) -->
+            <div class="my-msg message">
+              <span>Ciao carissima, spero hai ricevuto la mia mail.</span>
+              <i class="fa fa-chevron-down arrow-msg"></i>
+              <span class="message-time">18.01</span>
+              <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+                <span>Info messaggio</span>
+                <span class="delete">Cancella messaggio</span>
               </div>
             </div>
-              <!-- TERZA CHAT -->
-              <div class="chat-container" data-chat="3">
-                <!-- MESSAGGIO INVIATO (VERDE) -->
-                <div class="my-msg message">
-                  <span>Domani ci sei per la partita?</span>
-                  <i class="fa fa-chevron-down arrow-msg"></i>
-                  <span class="message-time">18.01</span>
-                  <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                    <span>Info messaggio</span>
-                    <span class="delete">Cancella messaggio</span>
-                  </div>
-                </div>
-                <!-- MESSAGGIO RICEVUTO (BIANCO) -->
-                <div class="your-msg message">
-                  <span>Certo, non posso mancare</span>
-                  <i class="fa fa-chevron-down arrow-msg"></i>
-                  <span class="message-time">18.01</span>
-                  <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                    <span>Info messaggio</span>
-                    <span class="delete">Cancella messaggio</span>
-                  </div>
-                </div>
+            <!-- MESSAGGIO RICEVUTO (BIANCO) -->
+            <div class="your-msg message">
+              <span>Certo, rispondero al più presto</span>
+              <i class="fa fa-chevron-down arrow-msg"></i>
+              <span class="message-time">18.01</span>
+              <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
+                <span>Info messaggio</span>
+                <span class="delete">Cancella messaggio</span>
               </div>
-                <!-- QUARTA CHAT -->
-                <div class="chat-container" data-chat="4">
-                  <!-- MESSAGGIO INVIATO (VERDE) -->
-                  <div class="my-msg message">
-                    <span>Ho un lavoro per te</span>
-                    <i class="fa fa-chevron-down arrow-msg"></i>
-                    <span class="message-time">18.01</span>
-                    <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                      <span>Info messaggio</span>
-                      <span class="delete">Cancella messaggio</span>
-                    </div>
-                  </div>
-                  <!-- MESSAGGIO RICEVUTO (BIANCO) -->
-                  <div class="your-msg message">
-                    <span>Di che si tratta?</span>
-                    <i class="fa fa-chevron-down arrow-msg"></i>
-                    <span class="message-time">18.01</span>
-                    <div class="option-box">
-                      <span>Info messaggio</span>
-                      <span class="delete">Cancella messaggio</span>
-                    </div>
-                  </div>
-                </div>
-                  <!-- QUINTA CHAT -->
-                  <div class="chat-container" data-chat="5">
-                    <!-- MESSAGGIO INVIATO (VERDE) -->
-                    <div class="my-msg message">
-                      <span>Stasera birra al solito pub</span>
-                      <i class="fa fa-chevron-down arrow-msg"></i>
-                      <span class="message-time">18.01</span>
-                      <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                        <span>Info messaggio</span>
-                        <span class="delete">Cancella messaggio</span>
-                      </div>
-                    </div>
-                    <!-- MESSAGGIO RICEVUTO (BIANCO) -->
-                    <div class="your-msg message">
-                      <span>Non posso, mi disp</span>
-                      <i class="fa fa-chevron-down arrow-msg"></i>
-                      <span class="message-time">18.01</span>
-                      <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                        <span>Info messaggio</span>
-                        <span class="delete">Cancella messaggio</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- SESTA CHAT -->
-                  <div class="chat-container" data-chat="6">
-                    <!-- MESSAGGIO INVIATO (VERDE) -->
-                    <div class="my-msg message">
-                      <span>Mi puoi passare quel file che ti avevo chiesto?</span>
-                      <i class="fa fa-chevron-down arrow-msg"></i>
-                      <span class="message-time">18.01</span>
-                      <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                        <span>Info messaggio</span>
-                        <span class="delete">Cancella messaggio</span>
-                      </div>
-                    </div>
-                    <!-- MESSAGGIO RICEVUTO (BIANCO) -->
-                    <div class="your-msg message">
-                      <span>Certo, te lo mando appena arrivo a casa</span>
-                      <i class="fa fa-chevron-down arrow-msg"></i>
-                      <span class="message-time">18.01</span>
-                      <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                        <span>Info messaggio</span>
-                        <span class="delete">Cancella messaggio</span>
-                      </div>
-                    </div>
-                  </div>
-                    <!-- SETTIMA CHAT -->
-                    <div class="chat-container" data-chat="7">
-                      <!-- MESSAGGIO INVIATO (VERDE) -->
-                      <div class="my-msg message">
-                        <span>Ciao carissima, spero hai ricevuto la mia mail.</span>
-                        <i class="fa fa-chevron-down arrow-msg"></i>
-                        <span class="message-time">18.01</span>
-                        <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                          <span>Info messaggio</span>
-                          <span class="delete">Cancella messaggio</span>
-                        </div>
-                      </div>
-                      <!-- MESSAGGIO RICEVUTO (BIANCO) -->
-                      <div class="your-msg message">
-                        <span>Certo, rispondero al più presto</span>
-                        <i class="fa fa-chevron-down arrow-msg"></i>
-                        <span class="message-time">18.01</span>
-                        <div class="option-box"> <!-- MENU A COMPARSA OPZIONE MSG -->
-                          <span>Info messaggio</span>
-                          <span class="delete">Cancella messaggio</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div> <!-- main right /div -->
+            </div>
+          </div>
+      </div> <!-- main right /div -->
 
-                  <!-- BARRA DI SCRITTURA -->
-                  <div class="footer-right">
-                    <div class="input-container">
-                      <i class="far fa-smile"></i>
-                      <input type="text" name="text" value="" placeholder="Scrivi un messaggio">
-                      <span class="icon-change">
-                        <i class="fas fa-microphone"></i>
-                        <i class="fab fa-telegram-plane send"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div> <!-- rightside /div -->
+      <!-- BARRA DI SCRITTURA -->
+      <div class="footer-right">
+        <div class="input-container">
+          <i class="far fa-smile"></i>
+          <input type="text" name="text" value="" placeholder="Scrivi un messaggio">
+          <span class="icon-change">
+            <i class="fas fa-microphone"></i>
+            <i class="fab fa-telegram-plane send"></i>
+          </span>
+        </div>
+      </div>
+    </div> <!-- rightside /div -->
 
-              </div> <!-- app container /div -->
+</div> <!-- app container /div -->
+
+<!-- TEMPLATE HANDLEBARS -->
+    <script id="msg-template" type="text/x-handlebars-template">
+      <div class= "{{class}} message">
+        <span>{{msgToShow}}</span>
+        <i class="fa fa-chevron-down arrow-msg"></i>
+        <span class="message-time">{{hoMin}}</span>
+        <div class="option-box">
+          <span>Info messaggio</span>
+          <span class="delete">Cancella messaggio</span>
+        </div>
+      </div>
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="script/main.js">

@@ -57,13 +57,19 @@ $(document).on( "click", "span.icon-change",
 
 //definisco la funzione inviaRispondi
 function inviaRispondi() {
+  // --------- HANDLEBARS DEFINITIONS
+  var source = $('#msg-template').html();
+  var template = Handlebars.compile(source);
+  var msg = input.val();
+  var context = {class: "my-msg", msgToShow: msg, hoMin: hour + minutes};
+  var html = template(context);
   console.log(input.val());
   //salvo nella variabile il container con classe active al momento del click
   var boxChat = $(".chat-container.active");
   //appendo alla chat attiva il div con relativa classe
    //solo se (if) l'input contiene caratteri (diverso da stringa vuota)
   if(input.val() != ""){
-  boxChat.append('<div class= "my-msg message"> <span>'+ input.val() +'</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">'+ hour + minutes +'</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
+  boxChat.append(html);
   input.val("");
 
 // imposto la funzione che risponde al mio msg dopo 1 secondo
@@ -77,10 +83,13 @@ function inviaRispondi() {
         //poi la risposta automatica
       setTimeout(
         function(){
+          var context = {class: "your-msg", msgToShow: "Ok bello !", hoMin: hour + minutes};
+          var html = template(context);
+
           var boxChat = $(".chat-container.active");
           var writing = $('.header-right-sx.active .header-right-sx-info p');
           console.log("io ritardo");
-          boxChat.append('<div class= "your-msg message"> <span>Spero di rivederti molto presto</span><i class="fa fa-chevron-down arrow-msg"></i><span class="message-time">'+ hour + minutes +'</span><div class="option-box"><span>Info messaggio</span><span class="delete">Cancella messaggio</span></div></div>');
+          boxChat.append(html);
           writing.html("Ultimo accesso alle "+ hour + minutes);
         }, 5000);
       }else{
