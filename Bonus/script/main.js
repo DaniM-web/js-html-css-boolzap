@@ -63,9 +63,11 @@ function inviaRispondi() {
   var msg = input.val();
   var context = {class: "my-msg", msgToShow: msg, hoMin: hour + minutes};
   var html = template(context);
+
   console.log(input.val());
   //salvo nella variabile il container con classe active al momento del click
   var boxChat = $(".chat-container.active");
+
   //appendo alla chat attiva il div con relativa classe
    //solo se (if) l'input contiene caratteri (diverso da stringa vuota)
   if(input.val() != ""){
@@ -76,29 +78,36 @@ function inviaRispondi() {
   // prima spunta la scritta sta scrivendo sotto il nome
     setTimeout(
       function(){
-          var writing = $('.header-right-sx.active .header-right-sx-info p');
+          var writing = $('.header-right-sx .header-right-sx-info p');
           console.log("io sto scrivendo");
           writing.html('Sta scrivendo...');
-        }, 2000);
+        }, 1000);
         //poi la risposta automatica
-      setTimeout(
-        function(){
-          var context = {class: "your-msg", msgToShow: "Ok bello !", hoMin: hour + minutes};
-          var html = template(context);
+    setTimeout(
+      function(){
+        var context = {class: "your-msg", msgToShow: "Ok bello !", hoMin: hour + minutes};
+        var html = template(context);
 
-          var boxChat = $(".chat-container.active");
-          var writing = $('.header-right-sx.active .header-right-sx-info p');
-          console.log("io ritardo");
-          boxChat.append(html);
-          writing.html("Ultimo accesso alle "+ hour + minutes);
-        }, 5000);
-      }else{
-        console.log("input vuoto");
-      }
+        var boxChat = $(".chat-container.active");
+        var writing = $('.header-right-sx .header-right-sx-info p');
+        console.log("io ritardo");
+        boxChat.append(html);
+        writing.html("Ultimo accesso alle "+ hour + minutes);
+      }, 2000);
+    }else{
+      console.log("input vuoto");
+    }
 };
 
+
 function correspondingData () {
-  var headerInfo = $('.header-right-sx')
+  //clono img del contatto cliccato
+  var infoImg = $(this).find('img').clone();
+  console.log("infoImg è :", infoImg);
+  //clono nome del contatto cliccato
+  var infoName = $(this).find('span.text h5').clone();
+  console.log("infoName è : ", infoName);
+  var headerInfo = $(".header-right-sx");
   var containerChat = $(".chat-container");
 //salvo il valore del corrente data attr del contatto
   var dataContatto = $(this).data("chat");
@@ -107,11 +116,15 @@ function correspondingData () {
   contacts.removeClass("active");
   $(this).addClass("active");
   //rimuovo la classe active dal container chat e dall'header con l'ultimo accesso
-  headerInfo.removeClass('active');
   containerChat.removeClass('active');
   //Assegno la classe active ai container che hanno stesso data attribute dei contatti
   $('.chat-container[data-chat="' + dataContatto + '"]').addClass('active');
-  $('.header-right-sx[data-chat="' + dataContatto + '"]').addClass('active');
+  //copio gli elementi clonati (img e nome) nell'header corrispondente
+  headerInfo.find(".header-right-sx-logo").empty().append(infoImg);
+  headerInfo.find("span.header-right-sx-info h5").html(infoName);
+
+
+
 };
 
 function deleteMsg () {

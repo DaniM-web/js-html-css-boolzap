@@ -196,11 +196,8 @@ span.text{
   align-items: center;
 }
 
-.header-right-sx{
-  display: none;
-}
 
-.header-right-sx.active{
+.header-right-sx{
   display: flex;
   align-items: center;
 }

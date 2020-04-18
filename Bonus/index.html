@@ -176,85 +176,13 @@
 
         <!-- BARRA ULTIMO ACCESSO -->
         <div class="header-right">
-          <!-- PRIMA INFO CONTATTO ALTA -->
-          <div class="header-right-sx active" data-chat="1">
+          <!-- INFO CONTATTO ALTA -->
+          <div class="header-right-sx" data-chat="1">
             <div class="header-right-sx-logo">
               <img src="img/avatar8.jpg" alt="profile img">
             </div>
             <span class="header-right-sx-info">
               <h5>Umberto</h5>
-              <p>
-                Ultimo accesso oggi alle 15.40
-              </p>
-            </span>
-          </div>
-          <!-- SECONDA INFO CONTATTO ALTA -->
-          <div class="header-right-sx" data-chat="2">
-            <div class="header-right-sx-logo">
-              <img src="img/avatar2.jpg" alt="profile img">
-            </div>
-            <span class="header-right-sx-info">
-              <h5>Cristiano</h5>
-              <p>
-                Ultimo accesso oggi alle 15.40
-              </p>
-            </span>
-          </div>
-          <!-- TERZA INFO CONTATTO ALTA -->
-          <div class="header-right-sx" data-chat="3">
-            <div class="header-right-sx-logo">
-              <img src="img/avatar3.jpg" alt="profile img">
-            </div>
-            <span class="header-right-sx-info">
-              <h5>Samuele</h5>
-              <p>
-                Ultimo accesso oggi alle 15.40
-              </p>
-            </span>
-          </div>
-          <!-- QUARTA INFO CONTATTO ALTA -->
-          <div class="header-right-sx" data-chat="4">
-            <div class="header-right-sx-logo">
-              <img src="img/avatar4.jpg" alt="profile img">
-            </div>
-            <span class="header-right-sx-info">
-              <h5>Giacomo</h5>
-              <p>
-                Ultimo accesso oggi alle 15.40
-              </p>
-            </span>
-          </div>
-          <!-- QUINTA INFO CONTATTO ALTA -->
-          <div class="header-right-sx" data-chat="5">
-            <div class="header-right-sx-logo">
-              <img src="img/avatar5.jpg" alt="profile img">
-            </div>
-            <span class="header-right-sx-info">
-              <h5>Alfredo</h5>
-              <p>
-                Ultimo accesso oggi alle 15.40
-              </p>
-            </span>
-          </div>
-          <!-- SESTA INFO CONTATTO ALTA -->
-          <div class="header-right-sx" data-chat="6">
-            <div class="header-right-sx-logo">
-              <img src="img/avatar7.jpg" alt="profile img">
-            </div>
-            <span class="header-right-sx-info">
-              <h5>Alfonso</h5>
-              <p>
-                Ultimo accesso oggi alle 15.40
-              </p>
-            </span>
-          </div>
-          <!-- ULTIMA INFO CONTATTO ALTA -->
-          <div class="header-right-sx" data-chat="7">
-            <div class="header-right-sx-logo">
-              <img src="img/avatar6.jpg" alt="profile img">
-            </div>
-            <span class="header-right-sx-info">
-              <h5>Claudia</h5>
               <p>
                 Ultimo accesso oggi alle 15.40
               </p>
@@ -452,7 +380,7 @@
 <!-- TEMPLATE HANDLEBARS -->
     <script id="msg-template" type="text/x-handlebars-template">
       <div class= "{{class}} message">
-        <span>{{msgToShow}}</span>
+        <span id="{{id}}" class="prova">{{msgToShow}}</span>
         <i class="fa fa-chevron-down arrow-msg"></i>
         <span class="message-time">{{hoMin}}</span>
         <div class="option-box">
