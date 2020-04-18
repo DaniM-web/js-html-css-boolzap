@@ -71,33 +71,36 @@ function inviaRispondi() {
   //appendo alla chat attiva il div con relativa classe
    //solo se (if) l'input contiene caratteri (diverso da stringa vuota)
   if(input.val() != ""){
-  boxChat.append(html);
-  input.val("");
+    boxChat.append(html);
+    input.val("");
+    $(".main-right").scrollTop(99999);
 
-// imposto la funzione che risponde al mio msg dopo 1 secondo
-  // prima spunta la scritta sta scrivendo sotto il nome
-    setTimeout(
-      function(){
+  // imposto la funzione che risponde al mio msg dopo 1 secondo
+    // prima spunta la scritta sta scrivendo sotto il nome
+      setTimeout(
+        function(){
+            var writing = $('.header-right-sx .header-right-sx-info p');
+            console.log("io sto scrivendo");
+            writing.html('Sta scrivendo...');
+          }, 1000);
+          //poi la risposta automatica
+      setTimeout(
+        function(){
+          var context = {class: "your-msg", msgToShow: "Ok bello !", hoMin: hour + minutes};
+          var html = template(context);
+
+          var boxChat = $(".chat-container.active");
           var writing = $('.header-right-sx .header-right-sx-info p');
-          console.log("io sto scrivendo");
-          writing.html('Sta scrivendo...');
-        }, 1000);
-        //poi la risposta automatica
-    setTimeout(
-      function(){
-        var context = {class: "your-msg", msgToShow: "Ok bello !", hoMin: hour + minutes};
-        var html = template(context);
-
-        var boxChat = $(".chat-container.active");
-        var writing = $('.header-right-sx .header-right-sx-info p');
-        console.log("io ritardo");
-        boxChat.append(html);
-        writing.html("Ultimo accesso alle "+ hour + minutes);
-      }, 2000);
-    }else{
-      console.log("input vuoto");
-    }
+          console.log("io ritardo");
+          boxChat.append(html);
+          $(".main-right").scrollTop(99999);
+          writing.html("Ultimo accesso alle "+ hour + minutes);
+        }, 2000);
+      }else{
+        console.log("input vuoto");
+      }
 };
+
 
 
 function correspondingData () {
